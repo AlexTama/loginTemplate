@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "loginTemplates"
+    }
+  },
+  "defaultProject": "loginTemplates",
+  "cli": {
+    "analytics": false
+  }
 }
