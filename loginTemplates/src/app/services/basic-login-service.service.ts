@@ -1,16 +1,26 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BasicLoginServiceService {
 
-  constructor() { }
+  helloEnpoint = environment.backend + "hello";
 
-  getLoginAccess(username: string, password: string) : boolean {
-    if (username === 'alex' && password === 'pass') {
-      return true;
-    }
-    return false;
+  constructor(private httpClient: HttpClient) { }
+
+  public getLoginAccess(username: string, password: string){
+
+
+    this.httpClient.get(this.helloEnpoint).subscribe(res => {
+      console.log(res);    
+    });
+
+    // if (username === 'alex' && password === 'pass') {
+    //   return true;
+    // }
+    // return false;
   }
 }

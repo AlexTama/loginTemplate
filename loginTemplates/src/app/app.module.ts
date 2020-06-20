@@ -8,6 +8,7 @@ import { NgModule } from '@angular/core';
 import { NotFoundComponent } from './error/not-found/not-found.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
