@@ -27,15 +27,17 @@ export class BasicLoginComponent implements OnInit {
 
   }
 
-  handleLogin() {
-    let response = this.loginService.getLoginAccess(this.persona.username, this.persona.password);
-    if (response) {
-      this.messageError = false;
-      this.router.navigate(['admin/dashboard', this.persona.username]);
-    } else {
-      this.messageError = true;
-      this.router.navigate(['login/basic']);
-    }  
+  public async handleLogin() {
+    let response = await this.loginService.getLoginAccess(this.persona.username, this.persona.password);
+    console.log(response);
+    
+    // if (response) {
+    //   this.messageError = false;
+    //   this.router.navigate(['admin/dashboard', this.persona.username]);
+    // } else {
+    //   this.messageError = true;
+    //   this.router.navigate(['login/basic']);
+    // }  
   }
 
 }

@@ -12,15 +12,11 @@ export class BasicLoginServiceService {
   constructor(private httpClient: HttpClient) { }
 
   public getLoginAccess(username: string, password: string){
-
-
-    this.httpClient.get(this.helloEnpoint).subscribe(res => {
-      console.log(res);    
+    console.log(this.helloEnpoint);
+    
+    this.httpClient.get('/hello').subscribe(data => {
+      console.log(data);
+      
     });
-
-    // if (username === 'alex' && password === 'pass') {
-    //   return true;
-    // }
-    // return false;
   }
 }
